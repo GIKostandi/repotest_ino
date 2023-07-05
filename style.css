@@ -195,6 +195,21 @@ filter svg {
 #filter_btn svg {
     margin-right: 10px;
 }
+.preloader {
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    .preloader__loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
 .filter #button-search:hover,
 .filter #reset-filter:hover {
