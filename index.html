@@ -534,6 +534,22 @@
         </div>
       </div>
     </main>
+     <div class="preloader">
+      <div class="preloader__loader">
+        <img src="loading-9.gif" alt="" />
+      </div>
+    </div>
+    <script>
+      // Preloader page
+      jQuery(document).ready(function ($) {
+        $(window).on("load", function () {
+          var $preloader = $(".preloader"),
+            $loader = $preloader.find(".preloader__loader");
+          $loader.fadeOut();
+          $preloader.delay(0).fadeOut(250);
+        });
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         if (document.documentElement.clientWidth < 576) {
