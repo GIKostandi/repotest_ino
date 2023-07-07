@@ -17,13 +17,235 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-      crossorigin="anonymous"
-    ></script>
   </head>
+  <style>
+    body {
+      font-family: Inter;
+    }
+    input:focus,
+    select:focus,
+    option:focus,
+    textarea:focus,
+    button:focus {
+      outline: none;
+    }
+    select {
+      border: none;
+    }
+    .secondary {
+      color: #6c757d;
+    }
+    .body-color {
+      color: #6c757d;
+    }
+    .ino-color {
+      color: #0029ff;
+    }
+    /* OTHERS */
+    *:focus {
+      border-color: none !important;
+      box-shadow: none !important;
+    }
+
+    .input-with-icon {
+      position: relative;
+    }
+
+    .input-with-icon input {
+      padding-right: 30px; /* Учитывайте ширину изображения и настройте отступ, если необходимо */
+    }
+
+    .input-with-icon .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 3%;
+      background-color: transparent; /* Удалите фон кнопки */
+      border: none; /* Удалите границу кнопки, если она не нужна */
+      padding: 0; /* Удалите отступы кнопки */
+      cursor: pointer;
+      opacity: 50%;
+    }
+
+    .input-with-icon .toggle-password img {
+      width: 20px; /* Установите желаемую ширину изображения */
+      height: 20px; /* Установите желаемую высоту изображения */
+    }
+    .navbar {
+      background-color: #0029ff;
+      height: 64px;
+    }
+    .nav-link {
+      font-size: 0.92em; /* 14 пикселей / 16 пикселей = 0.875 em */
+      line-height: 1.5em; /* 24 пикселя / 16 пикселей = 1.5 em */
+      margin-right: 3.7em; /* 54 пикселя / 16 пикселей = 3.375 em */
+      color: white !important;
+      transition: opacity 0.3s ease;
+    }
+    .nav-link:hover {
+      opacity: 0.7;
+    }
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .navbar-brand {
+      padding-left: 3%;
+    }
+    .offcanvas-body {
+      margin-left: auto;
+    }
+    .languagee {
+      border: none;
+      background-color: #0029ff;
+      color: white;
+    }
+    .text {
+      margin-right: 10%;
+      color: #303444;
+    }
+    h6 {
+      color: #303444;
+      font-size: 21px;
+      line-height: 36px;
+    }
+    .pid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10%;
+    }
+    .exit {
+      width: 20%;
+      margin-top: 4%;
+    }
+    @media handheld, screen and (width<991px) {
+      .empty {
+        display: none;
+      }
+      .left {
+        width: 100%;
+      }
+      #formContent {
+        width: 90%;
+      }
+      .logo img {
+        width: 80%;
+      }
+      .toast {
+        width: 90%;
+        margin-top: 5%;
+      }
+      .error_image {
+        width: 50%;
+        margin-top: 20%;
+      }
+      .logo_blue {
+        width: 38px;
+        height: 20px;
+        margin-bottom: 1%;
+      }
+      .logo_white {
+        width: 38px;
+        height: 20px;
+      }
+      .navbar-brand {
+        margin-left: 0%;
+      }
+      .nav-link {
+        margin-left: 3%;
+        color: black !important;
+      }
+      .offcanvas-body {
+        margin-left: 0;
+      }
+      .lang {
+        background-color: white;
+        color: black;
+      }
+      .text {
+        margin-right: 0;
+        margin-top: 22%;
+        text-align: center;
+      }
+      .pid {
+        display: block;
+      }
+      .pid2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .exit {
+        width: 93%;
+        margin: 4% 0 0 4%;
+      }
+    }
+  </style>
   <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="navbar-brand" href="#">
+          <img class="logo_white" src="logo_white.png" alt="Logo" width="45" />
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="margin-right: -4%"
+        >
+          <span
+            ><img src="hamburger-md-svgrepo-com.svg" style="width: 30px" alt=""
+          /></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="navbarNav"
+          aria-labelledby="navbarNavLabel"
+        >
+          <div class="offcanvas-header">
+            <div class="navbar-brand">
+              <img class="logo" src="logo_blue.png" alt="" />
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Анкеты</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Профиль</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">О проекте</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <select
+                    id="languageSelect"
+                    onchange="changeLanguage()"
+                    class="languagee"
+                  >
+                    <option selected>RUS</option>
+                    <option value="1">ENG</option>
+                  </select>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main>
       <div class="container">
         <div class="wrapper mx-sm-0 mx-md-auto mx-lg-auto">
@@ -123,15 +345,15 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
             <div class="col">
               <a
-                class="card overflow-hidden flex-sm-col flex-md-col flex-lg-row"
+                class="card overflow-hidden gap-4 flex-sm-col flex-md-col flex-lg-row"
                 href="#"
               >
                 <div class="card-img"></div>
                 <div
-                  class="col ps-sm-4 d-flex flex-column position-static justify-content-between"
+                  class="col card-text d-flex flex-column position-static justify-content-between"
                 >
                   <div class="d-flex flex-column justify-content-start">
-                    <div class="d-flex flex-row mb-2">
+                    <div class="d-flex flex-row mb-2 gap-2 flex-wrap">
                       <span class="label">Интерес</span>
                       <span class="label">Интерес</span>
                       <span class="label">Интерес</span>
@@ -144,8 +366,77 @@
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
+                        preserveAspectRatio="xMidYMid meet"
+                      >
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1.47826 9.50422L12.4783 4L23 9.50422L17.7391 12.2563M1.47826 9.50422L6.97826 12.2563M1.47826 9.50422H12.4783M1.47826 9.50422V15.0084M6.97826 12.2563L12.4783 15.0084L17.7391 12.2563M6.97826 12.2563V18.0107C11.3783 21.6135 15.9855 19.5119 17.7391 18.0107V12.2563M1.47826 15.0084C1.31884 15.0084 1 15.3087 1 16.5096H1.47826M1.47826 15.0084C1.63768 15.0084 1.95652 15.3087 1.95652 16.5096H1.47826M1.47826 15.0084V16.5096"
+                          stroke="black"
+                          stroke-width="0.67"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <p>Московский авиационный институт, Направление</p>
+                    </div>
+                    <div class="lang d-flex flex-row mb-sm-2">
+                      <svg
+                        class="me-2"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
+                        <path
+                          d="M4 6V14L5.8 11.2653H8H16V6C16 4.89543 15.1046 4 14 4H6C4.89543 4 4 4.89543 4 6Z"
+                          stroke="black"
+                          stroke-width="0.67"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M20 12V20L18.2 17.2653H10C8.89543 17.2653 8 16.3699 8 15.2653V12C8 10.8954 8.89543 10 10 10H18C19.1046 10 20 10.8954 20 12Z"
+                          fill="#F8F9FA"
+                          stroke="black"
+                          stroke-width="0.67"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <span>Английский</span>
+                    </div>
+                  </div>
+                  <button class="tg">Телеграм</button>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a
+                class="card overflow-hidden gap-4 flex-sm-col flex-md-col flex-lg-row"
+                href="#"
+              >
+                <div class="card-img"></div>
+                <div
+                  class="col card-text d-flex flex-column position-static justify-content-between"
+                >
+                  <div class="d-flex flex-column justify-content-start">
+                    <div class="d-flex flex-row mb-2 gap-2 flex-wrap">
+                      <span class="label">Интерес</span>
+                      <span class="label">Интерес</span>
+                      <span class="label">Интерес</span>
+                    </div>
+                    <h6 class="mb-2">Имя фамилия, 20 лет</h6>
+                    <div class="study d-flex flex-row mb-2">
+                      <svg
+                        class="me-2"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        preserveAspectRatio="xMidYMid meet"
+                      >
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M1.47826 9.50422L12.4783 4L23 9.50422L17.7391 12.2563M1.47826 9.50422L6.97826 12.2563M1.47826 9.50422H12.4783M1.47826 9.50422V15.0084M6.97826 12.2563L12.4783 15.0084L17.7391 12.2563M6.97826 12.2563V18.0107C11.3783 21.6135 15.9855 19.5119 17.7391 18.0107V12.2563M1.47826 15.0084C1.31884 15.0084 1 15.3087 1 16.5096H1.47826M1.47826 15.0084C1.63768 15.0084 1.95652 15.3087 1.95652 16.5096H1.47826M1.47826 15.0084V16.5096"
                           stroke="black"
@@ -192,15 +483,15 @@
             </div>
             <div class="col">
               <a
-                class="card overflow-hidden flex-sm-col flex-md-col flex-lg-row"
+                class="card overflow-hidden gap-4 flex-sm-col flex-md-col flex-lg-row"
                 href="#"
               >
                 <div class="card-img"></div>
                 <div
-                  class="col ps-sm-4 d-flex flex-column position-static justify-content-between"
+                  class="col card-text d-flex flex-column position-static justify-content-between"
                 >
                   <div class="d-flex flex-column justify-content-start">
-                    <div class="d-flex flex-row mb-2">
+                    <div class="d-flex flex-row mb-2 gap-2 flex-wrap">
                       <span class="label">Интерес</span>
                       <span class="label">Интерес</span>
                       <span class="label">Интерес</span>
@@ -213,8 +504,9 @@
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid meet"
                       >
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M1.47826 9.50422L12.4783 4L23 9.50422L17.7391 12.2563M1.47826 9.50422L6.97826 12.2563M1.47826 9.50422H12.4783M1.47826 9.50422V15.0084M6.97826 12.2563L12.4783 15.0084L17.7391 12.2563M6.97826 12.2563V18.0107C11.3783 21.6135 15.9855 19.5119 17.7391 18.0107V12.2563M1.47826 15.0084C1.31884 15.0084 1 15.3087 1 16.5096H1.47826M1.47826 15.0084C1.63768 15.0084 1.95652 15.3087 1.95652 16.5096H1.47826M1.47826 15.0084V16.5096"
                           stroke="black"
@@ -261,15 +553,15 @@
             </div>
             <div class="col">
               <a
-                class="card overflow-hidden flex-sm-col flex-md-col flex-lg-row"
+                class="card overflow-hidden gap-4 flex-sm-col flex-md-col flex-lg-row"
                 href="#"
               >
                 <div class="card-img"></div>
                 <div
-                  class="col ps-sm-4 d-flex flex-column position-static justify-content-between"
+                  class="col card-text d-flex flex-column position-static justify-content-between"
                 >
                   <div class="d-flex flex-column justify-content-start">
-                    <div class="d-flex flex-row mb-2">
+                    <div class="d-flex flex-row mb-2 gap-2 flex-wrap">
                       <span class="label">Интерес</span>
                       <span class="label">Интерес</span>
                       <span class="label">Интерес</span>
@@ -282,215 +574,9 @@
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid meet"
                       >
-                        <path
-                          d="M1.47826 9.50422L12.4783 4L23 9.50422L17.7391 12.2563M1.47826 9.50422L6.97826 12.2563M1.47826 9.50422H12.4783M1.47826 9.50422V15.0084M6.97826 12.2563L12.4783 15.0084L17.7391 12.2563M6.97826 12.2563V18.0107C11.3783 21.6135 15.9855 19.5119 17.7391 18.0107V12.2563M1.47826 15.0084C1.31884 15.0084 1 15.3087 1 16.5096H1.47826M1.47826 15.0084C1.63768 15.0084 1.95652 15.3087 1.95652 16.5096H1.47826M1.47826 15.0084V16.5096"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <p>
-                        Московский авиационный институт, Направление обучения
-                      </p>
-                    </div>
-                    <div class="lang d-flex flex-row mb-sm-2">
-                      <svg
-                        class="me-2"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 6V14L5.8 11.2653H8H16V6C16 4.89543 15.1046 4 14 4H6C4.89543 4 4 4.89543 4 6Z"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M20 12V20L18.2 17.2653H10C8.89543 17.2653 8 16.3699 8 15.2653V12C8 10.8954 8.89543 10 10 10H18C19.1046 10 20 10.8954 20 12Z"
-                          fill="#F8F9FA"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <span>Английский</span>
-                    </div>
-                  </div>
-                  <button class="tg">Телеграм</button>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a
-                class="card overflow-hidden flex-sm-col flex-md-col flex-lg-row"
-                href="#"
-              >
-                <div class="card-img"></div>
-                <div
-                  class="col ps-sm-4 d-flex flex-column position-static justify-content-between"
-                >
-                  <div class="d-flex flex-column justify-content-start">
-                    <div class="d-flex flex-row mb-2">
-                      <span class="label">Интерес</span>
-                      <span class="label">Интерес</span>
-                      <span class="label">Интерес</span>
-                    </div>
-                    <h6 class="mb-2">Имя фамилия, 20 лет</h6>
-                    <div class="study d-flex flex-row mb-2">
-                      <svg
-                        class="me-2"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.47826 9.50422L12.4783 4L23 9.50422L17.7391 12.2563M1.47826 9.50422L6.97826 12.2563M1.47826 9.50422H12.4783M1.47826 9.50422V15.0084M6.97826 12.2563L12.4783 15.0084L17.7391 12.2563M6.97826 12.2563V18.0107C11.3783 21.6135 15.9855 19.5119 17.7391 18.0107V12.2563M1.47826 15.0084C1.31884 15.0084 1 15.3087 1 16.5096H1.47826M1.47826 15.0084C1.63768 15.0084 1.95652 15.3087 1.95652 16.5096H1.47826M1.47826 15.0084V16.5096"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <p>
-                        Московский авиационный институт, Направление обучения
-                      </p>
-                    </div>
-                    <div class="lang d-flex flex-row mb-sm-2">
-                      <svg
-                        class="me-2"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 6V14L5.8 11.2653H8H16V6C16 4.89543 15.1046 4 14 4H6C4.89543 4 4 4.89543 4 6Z"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M20 12V20L18.2 17.2653H10C8.89543 17.2653 8 16.3699 8 15.2653V12C8 10.8954 8.89543 10 10 10H18C19.1046 10 20 10.8954 20 12Z"
-                          fill="#F8F9FA"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <span>Английский</span>
-                    </div>
-                  </div>
-                  <button class="tg">Телеграм</button>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a
-                class="card overflow-hidden flex-sm-col flex-md-col flex-lg-row"
-                href="#"
-              >
-                <div class="card-img"></div>
-                <div
-                  class="col ps-sm-4 d-flex flex-column position-static justify-content-between"
-                >
-                  <div class="d-flex flex-column justify-content-start">
-                    <div class="d-flex flex-row mb-2">
-                      <span class="label">Интерес</span>
-                      <span class="label">Интерес</span>
-                      <span class="label">Интерес</span>
-                    </div>
-                    <h6 class="mb-2">Имя фамилия, 20 лет</h6>
-                    <div class="study d-flex flex-row mb-2">
-                      <svg
-                        class="me-2"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.47826 9.50422L12.4783 4L23 9.50422L17.7391 12.2563M1.47826 9.50422L6.97826 12.2563M1.47826 9.50422H12.4783M1.47826 9.50422V15.0084M6.97826 12.2563L12.4783 15.0084L17.7391 12.2563M6.97826 12.2563V18.0107C11.3783 21.6135 15.9855 19.5119 17.7391 18.0107V12.2563M1.47826 15.0084C1.31884 15.0084 1 15.3087 1 16.5096H1.47826M1.47826 15.0084C1.63768 15.0084 1.95652 15.3087 1.95652 16.5096H1.47826M1.47826 15.0084V16.5096"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <p>
-                        Московский авиационный институт, Направление обучения
-                      </p>
-                    </div>
-                    <div class="lang d-flex flex-row mb-sm-2">
-                      <svg
-                        class="me-2"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 6V14L5.8 11.2653H8H16V6C16 4.89543 15.1046 4 14 4H6C4.89543 4 4 4.89543 4 6Z"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M20 12V20L18.2 17.2653H10C8.89543 17.2653 8 16.3699 8 15.2653V12C8 10.8954 8.89543 10 10 10H18C19.1046 10 20 10.8954 20 12Z"
-                          fill="#F8F9FA"
-                          stroke="black"
-                          stroke-width="0.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <span>Английский</span>
-                    </div>
-                  </div>
-                  <button class="tg">Телеграм</button>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a
-                class="card overflow-hidden flex-sm-col flex-md-col flex-lg-row"
-                href="#"
-              >
-                <div class="card-img"></div>
-                <div
-                  class="col ps-sm-4 d-flex flex-column position-static justify-content-between"
-                >
-                  <div class="d-flex flex-column justify-content-start">
-                    <div class="d-flex flex-row mb-2">
-                      <span class="label">Интерес</span>
-                      <span class="label">Интерес</span>
-                      <span class="label">Интерес</span>
-                    </div>
-                    <h6 class="mb-2">Имя фамилия, 20 лет</h6>
-                    <div class="study d-flex flex-row mb-2">
-                      <svg
-                        class="me-2"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M1.47826 9.50422L12.4783 4L23 9.50422L17.7391 12.2563M1.47826 9.50422L6.97826 12.2563M1.47826 9.50422H12.4783M1.47826 9.50422V15.0084M6.97826 12.2563L12.4783 15.0084L17.7391 12.2563M6.97826 12.2563V18.0107C11.3783 21.6135 15.9855 19.5119 17.7391 18.0107V12.2563M1.47826 15.0084C1.31884 15.0084 1 15.3087 1 16.5096H1.47826M1.47826 15.0084C1.63768 15.0084 1.95652 15.3087 1.95652 16.5096H1.47826M1.47826 15.0084V16.5096"
                           stroke="black"
@@ -539,32 +625,14 @@
         </div>
       </div>
     </main>
-     <div class="preloader">
-      <div class="preloader__loader">
-        <img src="loading-9.gif" alt="" />
-      </div>
-    </div>
-    <script>
-      // Preloader page
-      jQuery(document).ready(function ($) {
-        $(window).on("load", function () {
-          var $preloader = $(".preloader"),
-            $loader = $preloader.find(".preloader__loader");
-          $loader.fadeOut();
-          $preloader.delay(0).fadeOut(250);
-        });
-      });
-    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         if (document.documentElement.clientWidth < 576) {
           btnText.innerText = "Фильтры";
         }
       });
-
       let btn = document.getElementById("filter_btn");
       let btnText = document.getElementById("filter_btn_text");
-
       btn.onclick = function () {
         document
           .querySelectorAll(".filterDiv")
@@ -572,8 +640,6 @@
         document
           .querySelectorAll(".visibleDiv")
           .forEach((c) => c.classList.toggle("hidden_el_mob"));
-        console.log(btnText);
-
         if (document.documentElement.clientWidth > 576) {
           if (btnText.innerText === "Все фильтры") {
             btnText.innerText = "Скрыть фильтры";
