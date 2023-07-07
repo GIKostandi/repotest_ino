@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>about</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="text.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body {
+      font-family: Inter;
+    }
+    .logo_white {
+      width: 45.43px;
+      height: 24px;
+      margin-bottom: 1%;
+    }
+    .nav-link {
+      font-size: 0.92em; /* 14 пикселей / 16 пикселей = 0.875 em */
+      line-height: 1.5em; /* 24 пикселя / 16 пикселей = 1.5 em */
+      margin-right: 3.7em; /* 54 пикселя / 16 пикселей = 3.375 em */
+      color: white !important;
+      transition: opacity 0.3s ease;
+    }
+    .nav-link:hover {
+      opacity: 0.7;
+    }
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    select:focus {
+      outline: none;
+    }
+    .navbar-brand {
+      padding-left: 3%;
+    }
+    .offcanvas-body {
+      margin-left: auto;
+    }
+    .lang {
+      border: none;
+      background-color: rgb(0, 26, 255);
+      color: white;
+    }
+    .container {
+      display: flex;
+    }
+    .text {
+      margin-right: 10%;
+    }
+    .element-animation {
+      opacity: 0;
+    }
+    .element-animation.element-show {
+      opacity: 1;
+      transition: opacity 1s;
+    }
+    h2 {
+      color: #212529;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: auto;
+    }
+    h6 {
+      color: #212529;
+      font-size: 21px;
+      line-height: 36px;
+      text-align: start;
+    }
+    h4 {
+      color: #212529;
+      font-size: 24px;
+      line-height: auto;
+      font-weight: 600;
+    }
+    h3 {
+      color: #212529;
+      font-size: 21px;
+      line-height: 36px;
+      font-weight: 600;
+    }
+    h5 {
+      color: #212529;
+      font-size: 16px;
+      line-height: 28px;
+    }
+    .mini-text {
+      color: #212529;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    .container {
+      margin-top: 120px;
+    }
+    .pid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10%;
+    }
+    *:focus {
+      border-color: none !important;
+      box-shadow: none !important;
+    }
+    .circle-image {
+      display: inline-block;
+      border-radius: 50%;
+      width: 220px;
+      height: 220px;
+    }
+    #how_it_work {
+      display: flex;
+    }
+    .circle-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .friends {
+      width: 100%;
+    }
+    .accordion {
+      width: 60%;
+      margin-left: auto;
+    }
+
+    .hide {
+      display: block;
+    }
+
+    @media handheld, screen and (width<500px) {
+      .error_image {
+        width: 50%;
+        margin-top: 20%;
+      }
+      .logo_blue {
+        width: 38px;
+        height: 20px;
+        margin-bottom: 1%;
+      }
+      .logo_white {
+        width: 38px;
+        height: 20px;
+      }
+      .navbar-brand {
+        margin-left: 0%;
+      }
+      .nav-link {
+        margin-left: 3%;
+        color: black !important;
+      }
+      .offcanvas-body {
+        margin-left: 0;
+      }
+      .lang {
+        background-color: white;
+        color: black;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: auto;
+        text-align: center;
+      }
+      h6 {
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+        margin-top: 5%;
+        text-align: start;
+      }
+      h3 {
+        color: #212529;
+        font-size: 16px;
+        line-height: 28px;
+      }
+      .text {
+        margin-right: 0;
+        margin-top: 22%;
+      }
+      .container {
+        display: block;
+      }
+      .arrow {
+        height: 64px;
+      }
+      #how_it_work {
+        display: block;
+      }
+      .friends {
+        width: 301px;
+        height: 302px;
+      }
+      .accordion {
+        width: 100%;
+        margin-left: 0;
+      }
+      .mini-text {
+        color: #212529;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: start;
+      }
+      .circle-image {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+      }
+      h5 {
+        color: #212529;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .photo {
+        margin-left: 0;
+      }
+      .hide {
+        display: none;
+      }
+    }
+  </style>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg"
+      style="background-color: rgb(0, 26, 255); height: 64px"
+    >
+      <div class="container-fluid">
+        <div class="navbar-brand" href="#">
+          <img class="logo_white" src="logo_white.png" alt="Logo" width="50" />
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="border: none; margin-right: -3%"
+        >
+          <span
+            ><img src="hamburger-md-svgrepo-com.svg" style="width: 30px" alt=""
+          /></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="navbarNav"
+          aria-labelledby="navbarNavLabel"
+        >
+          <div class="offcanvas-header">
+            <div class="navbar-brand">
+              <img class="logo" src="logo_blue.png" alt="" />
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Анкеты</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="my_Profile.html">Профиль</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">О проекте</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <select
+                    id="languageSelect"
+                    onchange="changeLanguage()"
+                    class="lang"
+                  >
+                    <option selected>RUS</option>
+                    <option value="1">ENG</option>
+                  </select>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="container"
+      style="
+        background-color: #f8f9fa;
+        margin-top: 3%;
+        border-radius: 16px;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="margin: 5% 0 5% 1%">
+        <h2>Добро пожаловать!</h2>
+        <h6 style="margin-top: 4%">
+          Ino — это проект, который помогает искать<br />
+          друзей в своём вузе для практики иностранных <br />языков. Ты можешь
+          оставить анкету и найти<br />
+          новых друзей со схожими интересами
+        </h6>
+        <div class="text-center">
+          <a href="#how_it_work"
+            ><img class="arrow" src="arrow_down.svg" alt="" style="width: 86px"
+          /></a>
+        </div>
+      </div>
+      <div style="margin: 5% 0 5% 10%">
+        <img class="friends" src="8.png" alt="" />
+      </div>
+    </div>
+    <div id="how_it_work" class="container" style="margin-top: 5%">
+      <div>
+        <h2>Как это работает?</h2>
+      </div>
+      <div style="margin-left: 11%">
+        <h1 style="color: rgb(0, 26, 255)">01</h1>
+        <h4><strong>Заполни анкету</strong></h4>
+        <h6 class="mini-text">
+          Зарегистрируйся и заполни<br />
+          анкету, чтобы другие люди<br />
+          могли узнать о тебе
+        </h6>
+      </div>
+      <div style="margin-left: 8%">
+        <h1 style="color: rgb(0, 26, 255)">02</h1>
+        <h4><strong>Найди собеседника</strong></h4>
+        <h6 class="mini-text">
+          Выбери из предложенных или<br />
+          найди анкету используя<br />
+          фильтры
+        </h6>
+      </div>
+      <div style="margin-left: 8%">
+        <h1 style="color: rgb(0, 26, 255)">03</h1>
+        <h4>Пиши и общайся</h4>
+        <h6 class="mini-text">
+          Общайтесь онлайн или <br />назначьте встречу<br />
+          и проводите время вместе
+        </h6>
+      </div>
+    </div>
+    <div class="container">
+      <picture>
+        <source srcset="3.png" media="(width>500px)" />
+        <source srcset="моб.png" media="(width<500px)" />
+        <img src="3.png" />
+      </picture>
+    </div>
+    <div class="container" style="margin-top: 5%">
+      <div>
+        <h2>Часто задаваемые вопросы</h2>
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              <strong>Как создать анкету?</strong>
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <h6 class="mini-text">
+                Перейди во вкладку "Профиль", заполни все строчки анкеты на
+                языке потенциального собеседника и добавь фотографию. Все
+                просто!
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              <strong>Как написать другому пользователю?</strong>
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <h6 class="mini-text">
+                Перейди во вкладку "Анкеты", выбери понравившуюся тебе анкету и
+                кликай по кнопке “Написать”, ты перейдешь в Телеграм. Готово!
+                Договоритесь о встрече и познакомьтесь поближе.
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              <strong>Я боюсь написать первым(-ой)</strong>
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <h6 class="mini-text">
+                Попробуй отказаться от максимализма и ожидания, что каждое
+                знакомство перерастет в супер общение. Иногда знакомство - это
+                просто знакомство, неудачи - это нормально. Невозможно найти
+                соулмейта с первого раза! При достаточном количестве попыток
+                будут и удачные. Поэтому не стоит бояться. Старайся быть
+                открытым!
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex gap-4 flex-wrap">
+      <div>
+        <h2>
+          <strong>Команда проекта</strong>
+        </h2>
+      </div>
+      <div class="d-flex">
+        <div class="text-center photo">
+          <img class="circle-image" src="Sergo.jpg" alt="" />
+          <h3>Сергей Мицкевич</h3>
+          <h5 style="margin-top: -3%">Создатель</h5>
+        </div>
+        <div class="text-center" style="margin-left: 3%">
+          <img class="circle-image" src="Sergo.jpg" alt="" />
+          <h3>Георгий Костанди</h3>
+          <h5 style="margin-top: -3%">Frontend-Разработчик</h5>
+        </div>
+      </div>
+      <div class="photo" style="display: flex">
+        <div class="text-center">
+          <img class="circle-image" src="Sergo.jpg" alt="" />
+          <h3>Виктория Бурнашева</h3>
+          <h5 style="margin-top: -3%">UX/UI дизайнер</h5>
+        </div>
+        <div class="text-center" style="margin-left: 3%">
+          <img class="circle-image" src="Sergo.jpg" alt="" />
+          <h3>Егор Подустов</h3>
+          <h5 style="margin-top: -3%">Backend-разработчик</h5>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="how_it_work"
+      class="container"
+      style="background-color: #f8f9fa; border-radius: 16px; margin-bottom: 5em"
+    >
+      <div style="width: 50%">
+        <div style="margin: 15% 0 0 17%">
+          <h2>Мы рады обратной связи</h2>
+          <h5 class="mt-3">
+            Можешь написать, что бы тебе хотелось увидеть на<br />
+            сайте в будущем или что исправить. Мы готовы <br />услышать тебя и
+            будем рады меняться к лучшему!
+          </h5>
+          <img class="hide" style="margin-top: 5%" src="9 (1).png" alt="" />
+        </div>
+      </div>
+      <div style="margin: 6% 0 6% 3%; width: 50%">
+        <div class="mb-3">
+          <label
+            for="exampleFormControlInput1"
+            class="form-label mini-text"
+            style="margin-bottom: -2%; margin-top: 4%; opacity: 75%"
+            >Имя</label
+          >
+          <input
+            id="name"
+            type="name"
+            class="form-control mini-text"
+            id="exampleFormControlInput1"
+            placeholder="Введите имя"
+            style="width: 85%"
+          />
+        </div>
+        <div class="mb-3 mini-text">
+          <label
+            type="mail"
+            for="exampleFormControlInput1"
+            class="form-label mini-text"
+            style="margin-bottom: -2%; opacity: 75%"
+            >Почта</label
+          >
+          <input
+            id="mail"
+            type="mail"
+            class="form-control mini-text"
+            id="exampleFormControlInput1"
+            placeholder="Введите почту"
+            style="width: 85%"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            for="exampleFormControlTextarea1"
+            class="form-label mini-text"
+            style="margin-bottom: -2%; color: #6c757d"
+            >Пожелания/жалобы</label
+          >
+          <textarea
+            id="evil"
+            class="form-control mini-text"
+            id="exampleFormControlTextarea1"
+            rows="5"
+            placeholder="Введите текст"
+            style="width: 85%"
+          ></textarea>
+        </div>
+        <button
+          id="btn_feed"
+          type="button"
+          class="btn btn-secondary disabled"
+          style="width: 85%; margin-top: 2%"
+        >
+          Отправить
+        </button>
+        <h5 class="mini-text mt-2" style="color: #6c757d">
+          Нажимая на кнопку, я соглашаюсь на
+          <a style="color: #6c757d" href="">обработку персональных данных</a>
+        </h5>
+      </div>
+    </div>
+  </body>
+</html>
